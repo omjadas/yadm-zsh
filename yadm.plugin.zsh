@@ -1,17 +1,3 @@
-_prompt_yadm_status () {
-    case $(cat ~/.yadm/.status) in
-        (1)
-            print -P '%B%F{magenta}There are local configuration changes. Yadm sync required.%f%b'
-            ;;
-        (2)
-            print -P '%B%F{magenta}Run yadm push.%f%b'
-            ;;
-    esac
-}
-
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd _prompt_yadm_status
-
 # Aliases
 alias y=yadm
 alias ya='yadm add'
